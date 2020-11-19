@@ -55,6 +55,7 @@ namespace EntrainementBDDWPF
 
                 }
             }
+        }
 
         private void cboEmployes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
