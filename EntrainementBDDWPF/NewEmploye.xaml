@@ -1,0 +1,43 @@
+﻿<Window x:Class="EntrainementBDDWPF.NewEmploye"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EntrainementBDDWPF"
+        mc:Ignorable="d"
+        Title="NewEmploye" Height="450" Width="450" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="New Employe"   FontSize="40" FontFamily="Monotype Corsiva" 
+                    Foreground="Red" HorizontalAlignment="Center"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Numéro" FontFamily="Monotype Corsiva" FontSize="20" Grid.Row="1"></TextBlock>
+            <TextBox Name="txtNum" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="False" Height="20" Width="100" Margin="0,35,0,130.333"/>
+            <TextBlock Text="Nom" FontFamily="Monotype Corsiva" Grid.Column="1" FontSize="20" Grid.Row="1"></TextBlock>
+            <TextBox Name="txtNom" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="20" Width="100" Margin="2,35,0,130.333" />
+            <Button Name="btnAjouter" Content="Ajouter" Width="100" Height="50" Grid.Column="2" Click="btnAjouter_Click"></Button>
+            
+        </Grid>
+        <ListBox Name="lstEmployes" Grid.Row="2" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NumEmploye}"></TextBlock>
+                        <Line Width="10"></Line>
+                        <TextBlock Text="{Binding PrenomEmploye}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
